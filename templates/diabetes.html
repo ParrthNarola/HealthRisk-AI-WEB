@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        
+        <ul class="nav-links">
+          <a href="{{ url_for('index') }}" class="brand">HealthRisk AI</a>
+          <div class="nav-links-container">
+            <li><a href="{{ url_for('diabetes') }}">Diabetes Prediction</a></li>
+            <li><a href="{{ url_for('heart') }}">Heart Disease</a></li>
+            <li><a href="{{ url_for('parkinsons') }}">Parkinson's Disease</a></li>
+            
+            <li><a href="{{ url_for('help_page') }}">Help</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+          </div>
+          
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+  <h1>🩺 Diabetes Risk Estimator</h1>
+  <form method="POST" class="form-grid">
+    
+    <label>
+      Pregnancies
+      <input
+        name="pregnancies"
+        type="number"
+        step="1"
+        min="0"
+        placeholder="e.g., 2"
+        required
+      />
+      <small>Typical: 0 – 10</small>
+    </label>
+
+    <label>
+      Glucose (mg/dL)
+      <input
+        name="glucose"
+        type="number"
+        step="0.1"
+        min="0"
+        placeholder="e.g., 120"
+        required
+      />
+      <small>Normal: 70 – 140</small>
+    </label>
+
+    <label>
+      Blood Pressure (mmHg)
+      <input
+        name="blood_pressure"
+        type="number"
+        step="0.1"
+        min="0"
+        placeholder="e.g., 80"
+        required
+      />
+      <small>Normal: 60 – 120</small>
+    </label>
+
+    <label>
+      Skin Thickness (mm)
+      <input
+        name="skin_thickness"
+        type="number"
+        step="0.1"
+        min="0"
+        placeholder="e.g., 20"
+        required
+      />
+      <small>Typical: 10 – 50</small>
+    </label>
+
+    <label>
+      Insulin (mu U/ml)
+      <input
+        name="insulin"
+        type="number"
+        step="0.1"
+        min="0"
+        placeholder="e.g., 85"
+        required
+      />
+      <small>Normal: 15 – 276</small>
+    </label>
+
+    <label>
+      BMI
+      <input
+        name="bmi"
+        type="number"
+        step="0.1"
+        min="0"
+        placeholder="e.g., 24.5"
+        required
+      />
+      <small>Normal: 18.5 – 24.9</small>
+    </label>
+
+    <label>
+      Diabetes Pedigree Function
+      <input
+        name="dpf"
+        type="number"
+        step="0.001"
+        min="0"
+        placeholder="e.g., 0.5"
+        required
+      />
+      <small>Higher value → Higher risk</small>
+    </label>
+
+    <label>
+      Age (years)
+      <input
+        name="age"
+        type="number"
+        step="1"
+        min="0"
+        placeholder="e.g., 35"
+        required
+      />
+      <small>Risk ↑ after 40</small>
+    </label>
+
+    <button class="btn" type="submit">🔍 Predict</button>
+  </form>
+</main>
+
+
+    <!-- <main class="container">
+      <h1>Diabetes Risk Estimator</h1>
+      <form
+        method="POST"
+        class="form-grid">
+        <label
+          >Pregnancies<input
+            name="pregnancies"
+            type="number"
+            step="1"
+            min="0"
+            required
+        /></label>
+        <label
+          >Glucose<input
+            name="glucose"
+            type="number"
+            step="0.1"
+            min="0"
+            required
+        /></label>
+        <label
+          >Blood Pressure<input
+            name="blood_pressure"
+            type="number"
+            step="0.1"
+            min="0"
+            required
+        /></label>
+        <label
+          >Skin Thickness<input
+            name="skin_thickness"
+            type="number"
+            step="0.1"
+            min="0"
+            required
+        /></label>
+        <label
+          >Insulin<input
+            name="insulin"
+            type="number"
+            step="0.1"
+            min="0"
+            required
+        /></label>
+        <label
+          >BMI<input
+            name="bmi"
+            type="number"
+            step="0.1"
+            min="0"
+            required
+        /></label>
+        <label
+          >Diabetes Pedigree Function<input
+            name="dpf"
+            type="number"
+            step="0.001"
+            min="0"
+            required
+        /></label>
+        <label
+          >Age<input
+            name="age"
+            type="number"
+            step="1"
+            min="0"
+            required
+        /></label>
+        <button
+          class="btn"
+          type="submit">
+          Predict
+        </button>
+      </form>
+    </main> -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> HealthRisk AI</p>
+      </div>
+    </footer>
+  </body>
+</html>

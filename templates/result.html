@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        
+        <ul class="nav-links">
+          <a href="{{ url_for('index') }}" class="brand">HealthRisk AI</a>
+          <div class="nav-links-container">
+            <li><a href="{{ url_for('diabetes') }}">Diabetes Prediction</a></li>
+            <li><a href="{{ url_for('heart') }}">Heart Disease</a></li>
+            <li><a href="{{ url_for('parkinsons') }}">Parkinson's Disease</a></li>
+            
+            <li><a href="{{ url_for('help_page') }}">Help</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+          </div>
+          
+        </ul>
+      </div>
+    </nav>
+    <main class="container">
+      <h1>{{ condition }} Prediction</h1>
+      <div class="card">
+        <p class="result"><strong>Result:</strong> {{ result }}</p>
+        {% if inputs %}
+        <p><strong>Inputs:</strong> {{ inputs }}</p>
+        {% endif %}
+      </div>
+      <p>
+        <a
+          class="btn"
+          href="{{ url_for('index') }}"
+          >Back to Home</a
+        >
+      </p>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> HealthRisk AI</p>
+      </div>
+    </footer>
+  </body>
+</html>

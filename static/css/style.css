@@ -1,0 +1,385 @@
+:root {
+  --primary: #2563eb;
+  --bg: #0f172a;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --card: #111827;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+}
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.navbar {
+  background: #0d1117;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .brand {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* spacing between links */
+  margin: 0;
+  padding: 0;
+  margin-top: auto;
+  margin-left: auto;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover animation underline */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #1a73e8;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #1a73e8;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* .navbar {
+  background: #0b1220;
+  border-bottom: 1px solid #1f2937;
+}
+.navbar .brand {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 16px 0;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.nav-links a.active,
+.nav-links a:hover {
+  color: #fff;
+} */
+.hero {
+  padding: 64px 0;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.1), transparent);
+}
+.cta-group {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 45px;
+}
+.btn {
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.btn:hover {
+  filter: brightness(1.1);
+  background: #1e40af;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--card);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+}
+input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #374151;
+  background: #0b1220;
+  color: #fff;
+  margin-top: 6px;
+  font-size: 18px;
+}
+input:focus {
+  outline: 2px solid #2563eb;
+}
+
+.footer {
+  padding: 24px 0;
+  border-top: 1px solid #1f2937;
+  margin-top: 40px;
+  color: var(--muted);
+}
+.chat-window {
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  height: 240px;
+  overflow-y: auto;
+  padding: 12px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 20px; /* ✅ same font size */
+  color: #fff; /* text color */
+  font-family: Arial, sans-serif;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  background: #111827;
+  color: #fff;
+  font-size: 20px; /* ✅ same as chat-window */
+  font-family: Arial, sans-serif;
+}
+
+.chat-input button {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 20px; /* ✅ same text size */
+  font-family: Arial, sans-serif;
+}
+
+.chat-input button:hover {
+  background: #0f5cc1;
+  transform: scale(1.05);
+}
+
+.nav-links-container {
+  display: flex;
+  gap: 30px;
+  justify-content: right;
+  margin-top: auto;
+  margin-left: auto;
+  margin-bottom: auto;
+  align-items: center;
+}
+/* .chat-window {
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  height: 240px;
+  overflow: auto;
+  padding: 12px;
+}
+.chat-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  overflow: auto;
+} */
+
+.card {
+  background: var(--card);
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 16px;
+}
+.result {
+  font-size: 18px;
+}
+
+/* Basic styling for all select inputs */
+select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 16px;
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a custom arrow using a background */
+select {
+  background-image: url("data:image/svg+xml,%3Csvg fill='gray' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 30px; /* space for arrow */
+}
+
+/* Scrollbar styling for dropdown (Webkit Browsers like Chrome, Edge, Safari) */
+select::-webkit-scrollbar {
+  width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.form-grid button {
+  grid-column: 1 / -1; /* makes button take the full width */
+  justify-self: center; /* centers button */
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1{
+  color: #fff;
+  font-family: monospace;
+  font-size: 50px;
+  padding: 18px;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto;/* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.1em; /* Adjust as needed */
+  animation: typing 3.5s steps(22, start)forwards, blink-caret 0.5s step-end infinite;
+  box-sizing: content-box;
+}
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 22ch;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.form-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.form-grid textarea {
+  width: 100%;
+  padding: 8px;
+  resize: vertical;
+}
+
+.contact-info,
+.social-links {
+  margin-top: 30px;
+  padding: 15px;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+}
+
+.contact-info ul,
+.social-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li,
+.social-links li {
+  margin: 8px 0;
+}
+
+.contact-info a,
+.social-links a {
+  color: #4cc9f0;
+  text-decoration: none;
+}
+
+.contact-info a:hover,
+.social-links a:hover {
+  text-decoration: underline;
+}

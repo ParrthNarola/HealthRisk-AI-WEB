@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>HealthRisk AI - Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="nav-links">
+          <a
+            href="{{ url_for('index') }}"
+            class="brand"
+            >HealthRisk AI</a
+          >
+          <div class="nav-links-container">
+            <li><a href="{{ url_for('diabetes') }}">Diabetes Prediction</a></li>
+            <li><a href="{{ url_for('heart') }}">Heart Disease</a></li>
+            <li>
+              <a href="{{ url_for('parkinsons') }}">Parkinson's Disease</a>
+            </li>
+
+            <li><a href="{{ url_for('help_page') }}">Help</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container">
+        <h1>This is HealthRisk AI</h1>
+
+        <p>
+          Use our simple forms to estimate risk for diabetes, heart disease, and
+          Parkinson's.
+        </p>
+        <div class="typewriter"><h1>HOW CAN I HELP YOU?</h1></div>
+        
+      </div>
+      
+    </header>
+
+    <section class="chatbot">
+      <div class="container">
+        <h2 style="margin-left: 65px">Chat with our Assistant</h2>
+        <div
+          id="chat-window"
+          class="chat-window"></div>
+        <div class="chat-input">
+          <input
+            id="chat-text"
+            type="text"
+            placeholder="Ask a health question..." />
+          <button
+            id="chat-send"
+            class="btn">
+            Send
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-group">
+      <a
+        class="btn"
+        href="{{ url_for('diabetes') }}"
+        >Diabetes Risk Check</a
+      >
+      <a
+        class="btn"
+        href="{{ url_for('heart') }}"
+        >Heart Disease Risk Check</a
+      >
+      <a
+        class="btn"
+        href="{{ url_for('parkinsons') }}"
+        >Parkinson's Disease Risk Check</a
+      >
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> HealthRisk AI</p>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+  <script></script>
+</html>

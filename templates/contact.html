@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="nav-links">
+          <a
+            href="{{ url_for('index') }}"
+            class="brand"
+            >HealthRisk AI</a
+          >
+          <div class="nav-links-container">
+            <li><a href="{{ url_for('diabetes') }}">Diabetes Prediction</a></li>
+            <li><a href="{{ url_for('heart') }}">Heart Disease</a></li>
+            <li>
+              <a href="{{ url_for('parkinsons') }}">Parkinson's Disease</a>
+            </li>
+
+            <li><a href="{{ url_for('help_page') }}">Help</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+          </div>
+        </ul>
+      </div>
+    </nav>
+    <main class="container">
+      <h1>📞 Contact Us</h1>
+      <p>
+        We’d love to hear from you! Whether you have a question, feedback, or
+        need support using
+        <strong>HealthRisk AI</strong>, you can reach us through the form below
+        or via our contact details.
+      </p>
+
+      <!-- Contact Form -->
+      <form
+        method="POST"
+        action="/send_message"
+        class="form-grid">
+        <label>
+          Full Name
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required />
+        </label>
+
+        <label>
+          Email
+          <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required />
+        </label>
+
+        <label>
+          Subject
+          <input
+            type="text"
+            name="subject"
+            placeholder="Message subject"
+            required />
+        </label>
+
+        <label class="full-width" style="font-size: 20px;">
+          Message
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Write your message here..."
+            required></textarea>
+        </label>
+
+        <button
+          type="submit"
+          class="btn">
+          📨 Send Message
+        </button>
+      </form>
+
+      <!-- Contact Information -->
+      <section class="contact-info">
+        <h2>Other Ways to Reach Us</h2>
+        <ul>
+          <li>
+            📧 Email:
+            <a href="mailto:support@healthriskai.com"
+              >support@healthrisk.ai</a
+            >
+          </li>
+          <li>📞 Phone: +91 98989 98989</li>
+          <li>📍 Address: HealthRisk AI Lab, GJ, India</li>
+        </ul>
+      </section>
+
+      <!-- Social Media (Optional) -->
+      <section class="social-links">
+        <h2>Follow Us</h2>
+        <ul>
+          <li><a href="#">🌐 Website</a></li>
+          <li><a href="#">💼 LinkedIn</a></li>
+          <li><a href="#">🐦 Twitter</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> HealthRisk AI</p>
+      </div>
+    </footer>
+  </body>
+</html>

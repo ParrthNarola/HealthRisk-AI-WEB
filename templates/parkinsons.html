@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Parkinson's Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="nav-links">
+          <a
+            href="{{ url_for('index') }}"
+            class="brand"
+            >HealthRisk AI</a
+          >
+          <div class="nav-links-container">
+            <li><a href="{{ url_for('diabetes') }}">Diabetes Prediction</a></li>
+            <li><a href="{{ url_for('heart') }}">Heart Disease</a></li>
+            <li>
+              <a href="{{ url_for('parkinsons') }}">Parkinson's Disease</a>
+            </li>
+
+            <li><a href="{{ url_for('help_page') }}">Help</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1>🧠 Parkinson's Risk Estimator</h1>
+      <form
+        method="POST"
+        class="form-grid">
+        <!-- Fundamental Frequency (Fo) -->
+        <label>
+          Fundamental Frequency (Fo) [Hz]
+          <input
+            name="fo"
+            type="number"
+            step="0.1"
+            min="50"
+            max="500"
+            placeholder="e.g., 180.5"
+            required />
+          <small>Average vocal pitch in Hz (typically 85–255 for humans)</small>
+        </label>
+
+        <!-- Max Frequency (Fhi) -->
+        <label>
+          Maximum Vocal Frequency (Fhi) [Hz]
+          <input
+            name="fhi"
+            type="number"
+            step="0.1"
+            min="100"
+            max="600"
+            placeholder="e.g., 220.3"
+            required />
+          <small>Highest vocal pitch detected</small>
+        </label>
+
+        <!-- Min Frequency (Flo) -->
+        <label>
+          Minimum Vocal Frequency (Flo) [Hz]
+          <input
+            name="flo"
+            type="number"
+            step="0.1"
+            min="50"
+            max="400"
+            placeholder="e.g., 90.2"
+            required />
+          <small>Lowest vocal pitch detected</small>
+        </label>
+
+        <!-- Jitter -->
+        <label>
+          Jitter (%)
+          <input
+            name="jitter"
+            type="number"
+            step="0.001"
+            min="0"
+            max="1"
+            placeholder="e.g., 0.005"
+            required />
+          <small>Variation in frequency (voice stability)</small>
+        </label>
+
+        <!-- Shimmer -->
+        <label>
+          Shimmer (%)
+          <input
+            name="shimmer"
+            type="number"
+            step="0.001"
+            min="0"
+            max="1"
+            placeholder="e.g., 0.025"
+            required />
+          <small>Variation in amplitude (voice strength)</small>
+        </label>
+
+        <!-- Button -->
+
+        <button
+          class="btn"
+          type="submit">
+          🔍 Predict
+        </button>
+      </form>
+    </main>
+
+    <!-- <main class="container">
+      <h1>Parkinson's Risk Estimator</h1>
+      <form
+        method="POST"
+        class="form-grid">
+        <label
+          >Fo<input
+            name="fo"
+            type="number"
+            step="0.1"
+            required
+        /></label>
+        <label
+          >Fhi<input
+            name="fhi"
+            type="number"
+            step="0.1"
+            required
+        /></label>
+        <label
+          >Flo<input
+            name="flo"
+            type="number"
+            step="0.1"
+            required
+        /></label>
+        <label
+          >Jitter<input
+            name="jitter"
+            type="number"
+            step="0.001"
+            required
+        /></label>
+        <label
+          >Shimmer<input
+            name="shimmer"
+            type="number"
+            step="0.001"
+            required
+        /></label>
+        <button
+          class="btn"
+          type="submit">
+          Predict
+        </button>
+      </form>
+    </main> -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> HealthRisk AI</p>
+      </div>
+    </footer>
+  </body>
+</html>

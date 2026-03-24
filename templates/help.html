@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Help</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="nav-links">
+          <a
+            href="{{ url_for('index') }}"
+            class="brand"
+            >HealthRisk AI</a
+          >
+          <div class="nav-links-container">
+            <li><a href="{{ url_for('diabetes') }}">Diabetes Prediction</a></li>
+            <li><a href="{{ url_for('heart') }}">Heart Disease</a></li>
+            <li>
+              <a href="{{ url_for('parkinsons') }}">Parkinson's Disease</a>
+            </li>
+
+            <li><a href="{{ url_for('help_page') }}">Help</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+          </div>
+        </ul>
+      </div>
+    </nav>
+    <main class="container">
+      <h1>ℹ️ Help & User Guide – HealthRisk AI</h1>
+
+      <section>
+        <h2>About HealthRisk AI</h2>
+        <p>
+          <strong>HealthRisk AI</strong> is a machine learning-powered platform
+          that helps patients and doctors predict the risk of multiple diseases
+          based on medical inputs. It currently supports:
+        </p>
+        <ul>
+          <li>🩸 <strong>Diabetes Risk Estimation</strong></li>
+          <li>❤️ <strong>Heart Disease Risk Estimation</strong></li>
+          <li>🧠 <strong>Parkinson’s Disease Risk Estimation</strong></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>How to Use the Website</h2>
+        <ol>
+          <li>
+            Navigate to the disease you want to test from the
+            <strong>Navigation Bar</strong>.
+          </li>
+          <li>
+            Fill out the input form with your medical details (as shown below).
+          </li>
+          <li>Click on the <strong>Predict</strong> button.</li>
+          <li>
+            View the result showing whether you are at <em>high risk</em> or
+            <em>low risk</em>.
+          </li>
+          <li>
+            You can also use the <strong>Chatbot</strong> for quick help and
+            FAQs.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>🩸 Diabetes Prediction Parameters</h2>
+        <table
+          border="1"
+          cellpadding="8">
+          <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Pregnancies</td>
+            <td>Number of times pregnant (0 if male).</td>
+          </tr>
+          <tr>
+            <td>Glucose</td>
+            <td>
+              Plasma glucose concentration after 2 hours in an oral glucose
+              test.
+            </td>
+          </tr>
+          <tr>
+            <td>Blood Pressure</td>
+            <td>Diastolic blood pressure (mm Hg).</td>
+          </tr>
+          <tr>
+            <td>Skin Thickness</td>
+            <td>Triceps skin fold thickness (mm).</td>
+          </tr>
+          <tr>
+            <td>Insulin</td>
+            <td>2-hour serum insulin (mu U/ml).</td>
+          </tr>
+          <tr>
+            <td>BMI</td>
+            <td>Body Mass Index = weight (kg) / height² (m²).</td>
+          </tr>
+          <tr>
+            <td>Diabetes Pedigree Function</td>
+            <td>Likelihood of diabetes based on family history.</td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>Age in years.</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>❤️ Heart Disease Prediction Parameters</h2>
+        <table
+          border="1"
+          cellpadding="8">
+          <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>Patient's age in years.</td>
+          </tr>
+          <tr>
+            <td>Sex</td>
+            <td>1 = Male, 0 = Female.</td>
+          </tr>
+          <tr>
+            <td>Chest Pain Type (cp)</td>
+            <td>0–3 categories of chest pain experienced.</td>
+          </tr>
+          <tr>
+            <td>Resting Blood Pressure</td>
+            <td>Blood pressure at rest (mm Hg).</td>
+          </tr>
+          <tr>
+            <td>Cholesterol</td>
+            <td>Serum cholesterol in mg/dl.</td>
+          </tr>
+          <tr>
+            <td>Fasting Blood Sugar (fbs)</td>
+            <td>1 = >120 mg/dl, 0 = ≤120 mg/dl.</td>
+          </tr>
+          <tr>
+            <td>Rest ECG</td>
+            <td>Electrocardiographic results (0–2).</td>
+          </tr>
+          <tr>
+            <td>Max Heart Rate (thalach)</td>
+            <td>Maximum heart rate achieved.</td>
+          </tr>
+          <tr>
+            <td>Exercise Induced Angina (exang)</td>
+            <td>1 = Yes, 0 = No.</td>
+          </tr>
+          <tr>
+            <td>Oldpeak</td>
+            <td>ST depression induced by exercise relative to rest.</td>
+          </tr>
+          <tr>
+            <td>Slope</td>
+            <td>Slope of the ST segment (0–2).</td>
+          </tr>
+          <tr>
+            <td>CA</td>
+            <td>Number of major vessels (0–3) colored by fluoroscopy.</td>
+          </tr>
+          <tr>
+            <td>Thal</td>
+            <td>Thalassemia value (0–3).</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>🧠 Parkinson's Prediction Parameters</h2>
+        <table
+          border="1"
+          cellpadding="8">
+          <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Fo (Fundamental Frequency)</td>
+            <td>Average vocal pitch in Hz.</td>
+          </tr>
+          <tr>
+            <td>Fhi</td>
+            <td>Maximum vocal pitch detected.</td>
+          </tr>
+          <tr>
+            <td>Flo</td>
+            <td>Minimum vocal pitch detected.</td>
+          </tr>
+          <tr>
+            <td>Jitter</td>
+            <td>Variation in frequency (voice stability).</td>
+          </tr>
+          <tr>
+            <td>Shimmer</td>
+            <td>Variation in amplitude (voice strength).</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>📞 Need More Help?</h2>
+        <p>
+          If you have issues or questions, you can use the
+          <strong>Chatbot</strong>, visit the <strong>Contact Us</strong> page,
+          or email our support team.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> HealthRisk AI</p>
+      </div>
+    </footer>
+  </body>
+</html>

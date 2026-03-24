@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="nav-links">
+          <a
+            href="{{ url_for('index') }}"
+            class="brand"
+            >HealthRisk AI</a
+          >
+          <div class="nav-links-container">
+            <li><a href="{{ url_for('diabetes') }}">Diabetes Prediction</a></li>
+            <li><a href="{{ url_for('heart') }}">Heart Disease</a></li>
+            <li>
+              <a href="{{ url_for('parkinsons') }}">Parkinson's Disease</a>
+            </li>
+
+            <li><a href="{{ url_for('help_page') }}">Help</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+          </div>
+        </ul>
+      </div>
+    </nav>
+    <main class="container">
+      <h1>👤 Your Profile</h1>
+      <p>Manage your account information below.</p>
+
+      <!-- Profile Form -->
+      <form
+        method="POST"
+        action="/update_profile"
+        class="profile-form">
+        <!-- Role -->
+        <section class="card">
+          <h2>🧑‍⚕️ Role</h2>
+          <label>
+            <select
+              name="role"
+              required>
+              <option value="patient">Patient</option>
+              <option value="doctor">Doctor</option>
+            </select>
+          </label>
+        </section>
+
+        <!-- Personal Info -->
+        <section class="card">
+          <h2>📌 Personal Information</h2>
+          <label
+            >Full Name:
+            <input
+              type="text"
+              name="name"
+              value="John Doe"
+              required />
+          </label>
+          <label
+            >Email:
+            <input
+              type="email"
+              name="email"
+              value="johndoe@example.com"
+              required />
+          </label>
+          <label
+            >Phone:
+            <input
+              type="tel"
+              name="phone"
+              value="+91 9876543210"
+              required />
+          </label>
+          <label
+            >Gender:
+            <select name="gender">
+              <option
+                value="male"
+                selected>
+                Male
+              </option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label
+            >Age:
+            <input
+              type="number"
+              name="age"
+              value="45"
+              min="1"
+              max="120" />
+          </label>
+        </section>
+
+        <!-- Patient Info -->
+        <section class="card patient-info">
+          <h2>🩺 Health Information (for Patients)</h2>
+          <label
+            >Known Diseases:
+            <input
+              type="text"
+              name="diseases"
+              placeholder="e.g. Hypertension, Diabetes" />
+          </label>
+          <label
+            >Medications:
+            <input
+              type="text"
+              name="medications"
+              placeholder="e.g. Metformin, Amlodipine" />
+          </label>
+          <label
+            >Last Checkup Date:
+            <input
+              type="date"
+              name="last_checkup" />
+          </label>
+        </section>
+
+        <!-- Doctor Info -->
+        <section class="card doctor-info">
+          <h2>🏥 Professional Information (for Doctors)</h2>
+          <label
+            >Specialization:
+            <input
+              type="text"
+              name="specialization"
+              placeholder="e.g. Cardiologist" />
+          </label>
+          <label
+            >Experience (Years):
+            <input
+              type="number"
+              name="experience"
+              min="0"
+              placeholder="e.g. 10" />
+          </label>
+          <label
+            >Hospital/Clinic:
+            <input
+              type="text"
+              name="hospital"
+              placeholder="e.g. Apollo Hospital" />
+          </label>
+          <label
+            >License No:
+            <input
+              type="text"
+              name="license"
+              placeholder="DOC12345" />
+          </label>
+        </section>
+
+        <!-- Save + Logout -->
+        <section class="card">
+          <h2>⚙️ Actions</h2>
+          <button style="font-size: 20px;" type="submit">💾 Save Profile</button>
+          <button style="font-size: 20px;"
+            type="button"
+            onclick="window.location='/logout'">
+            🚪 Logout
+          </button>
+        </section>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> HealthRisk AI</p>
+      </div>
+    </footer>
+  </body>
+</html>
